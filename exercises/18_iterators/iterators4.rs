@@ -10,6 +10,11 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    let mut fact: Vec<u64> = vec![1; (num + 1) as usize];
+    for idx in 2..=num as usize {
+        fact[idx] = fact[idx - 1] * idx as u64;
+    }
+    fact[num as usize]
 }
 
 fn main() {
